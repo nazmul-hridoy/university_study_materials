@@ -1,0 +1,35 @@
+compiler
+chapter--01
+
+1.what is compiler
+2.what is interpreter
+3.compiler vs interpreter
+4.defination: linear analysis
+5.defination: hierachical analysis
+6.defination: semantic analysis
+7.structure of a compiler
+8.what is symble table of a compiler
+9.symble table managment(page-11,1.27)
+
+chapter--02
+1.defination:syntax
+2.defination:grammer
+3.terminal/non-terminal(sir jene rakhte bolsilo)
+4.defination:symble tree
+5.CFG/rule
+6.L--R
+7.parsee tree 
+page-47(2.24)
+    HOUSE RENT=(basic/100)*60    (math--structure of a compiler)
+	
+	------------------
+kleene closure
+positive closure
+L^4 ?
+L=a then L^4 ?
+L=ab then L^4 ?
+NFA/DFA
+	
+	
+	
+	

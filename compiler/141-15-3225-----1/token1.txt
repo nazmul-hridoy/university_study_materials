@@ -1,0 +1,26 @@
+
+#include<stdio.h>
+
+int main()
+{
+ int x;
+ char str[100];
+ printf("ENTER STRING : ");
+
+ gets(str);
+ for(x=0; x<strlen(str); x++){
+
+     if(str[x]==' ')
+ {
+     printf("\n");
+     while(str[x]==' ')
+        x++;
+ }
+	printf("%c",str[x]);
+
+ }
+
+return 0;
+
+
+}

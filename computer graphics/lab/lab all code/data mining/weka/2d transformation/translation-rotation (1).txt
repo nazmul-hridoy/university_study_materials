@@ -1,0 +1,155 @@
+#include <GL/gl.h>
+#include <GL/glut.h>
+#include<math.h>
+
+int ax=20,ay=80,bx=20,by=40,cx=60,cy=10,dx=60,dy=70,e;
+float tx,ty;
+void display(void)
+{
+/* clear all pixels */
+glClear (GL_COLOR_BUFFER_BIT);
+/* draw white polygon (rectangle) with corners at
+* (0.25, 0.25, 0.0) and (0.75, 0.75, 0.0)
+*/
+
+
+
+
+
+
+//scanf("%d %d %d %d %d %d %d %d",&ax, &ay, &bx, &by, &cx, &cy, &dx, &dy);
+while(1)
+{
+    glColor3f (1.0, 0.0, 0.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(ax, ay, 0);
+    glVertex3f(bx, by, 0);
+    glVertex3f(cx, cy, 0);
+    glVertex3f(dx, dy, 0);
+    glEnd();
+    glFlush ();
+
+
+    if(e==1)
+    {
+
+        glColor3f (1.0, 1.0, 1.0);
+    glBegin(GL_POLYGON);
+
+    glVertex3f(ax+tx, ay+ty, 0);
+    glVertex3f(bx+tx, by+ty, 0);
+    glVertex3f(cx+tx, cy+ty, 0);
+    glVertex3f(dx+tx, dy+ty, 0);
+    glEnd();
+    glFlush ();
+
+    }
+    else if(e==2)
+    {
+        //scanf("%d", &tx);
+        glColor3f (0.0, 1.0, 0.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(ax*cos(tx*3.1416/180)-ay*sin(tx*3.1416/180),ax*sin(tx*3.1416/180)-ay*cos(tx*3.1416/180) , 0);
+    glVertex3f(bx*cos(tx*3.1416/180)-by*sin(tx*3.1416/180),bx*sin(tx*3.1416/180)-by*cos(tx*3.1416/180), 0);
+    glVertex3f(cx*cos(tx*3.1416/180)-cy*sin(tx*3.1416/180),cx*sin(tx*3.1416/180)-cy*cos(tx*3.1416/180), 0);
+    glVertex3f(dx*cos(tx*3.1416/180)-dy*sin(tx*3.1416/180),dx*sin(tx*3.1416/180)-dy*cos(tx*3.1416/180), 0);
+    glEnd();
+    glFlush ();
+
+
+    }
+    else if(e==3)
+    {
+        //scanf("%d%d",&tx, &ty);
+        glColor3f (1.0, 1.0, 1.0);
+    glBegin(GL_POLYGON);
+
+    glVertex3f(ax*tx, ay*ty, 0);
+    glVertex3f(bx*tx, by*ty, 0);
+    glVertex3f(cx*tx, cy*ty, 0);
+    glVertex3f(dx*tx, dy*ty, 0);
+    glEnd();
+    glFlush ();
+    }
+    else if(e==4)
+    {
+        glColor3f (1.0, 1.0, 1.0);
+    glBegin(GL_POLYGON);
+
+    glVertex3f(-ax, -ay, 0);
+    glVertex3f(-bx, -by, 0);
+    glVertex3f(-cx, -cy, 0);
+    glVertex3f(-dx, -dy, 0);
+    glEnd();
+    glFlush ();
+    }
+    else if(e==5)
+    {
+        //scanf("%d %d",&tx, &ty);
+        glColor3f (0.0, 0.0, 1.0);
+    glBegin(GL_POLYGON);
+
+    glVertex3f(ax+tx*ay, ay, 0);
+    glVertex3f(bx+tx*by, by, 0);
+    glVertex3f(cx+tx*cy, cy, 0);
+    glVertex3f(dx+tx*dy, dy, 0);
+    glEnd();
+    glFlush ();
+    }
+    else{
+            glClear (GL_COLOR_BUFFER_BIT);
+                    glColor3f (1.0, 0.0, 0.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(ax, ay, 0);
+    glVertex3f(bx, by, 0);
+    glVertex3f(cx, cy, 0);
+    glVertex3f(dx, dy, 0);
+    glEnd();
+    glFlush ();
+    }
+}
+
+
+
+
+
+/* don't wait!
+* start processing buffered OpenGL routines
+*/
+
+}
+void init (void)
+{
+/* select clearing (background) color */
+glClearColor (0.0, 0.0, 0.0, 0.0);
+/* initialize viewing values */
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+glOrtho(-500.0, 500,  -500, 500, -500.0, 500.0);
+}
+/*
+* Declare initial window size, position, and display mode
+* (single buffer and RGBA). Open window with "hello"
+* in its title bar. Call initialization routines.
+* Register callback function to display graphics.
+* Enter main loop and process events.
+*/
+int main(int argc, char** argv)
+{
+   // printf("Enter tx ty ");
+    scanf("%f%f",&tx, &ty);
+printf("1. Translate\n2. Rotate\n3. Scale\n4. Reflect\n5. Shear\n");
+    scanf("%d", &e);
+
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (500, 500);
+glutInitWindowPosition (100, 100);
+glutCreateWindow ("hello");
+init ();
+glutDisplayFunc(display);
+glutMainLoop();
+return 0; /* ISO C requires main to return int. */
+}
+
+

@@ -1,0 +1,124 @@
+#include <GL/gl.h>
+#include <GL/glut.h>
+
+int tx,ty,sx,sy,sh;
+void display(void)
+{
+
+int x=20,y=20,st=10;
+
+glClear (GL_COLOR_BUFFER_BIT);
+
+glColor3f (1.0, 0.25, 1.0);
+glBegin(GL_POLYGON);
+glVertex2d(st,st);
+glVertex2d(st+x,st-5);
+glVertex2d(st+x,st+15);
+glVertex2d(st,st+y);
+glEnd();
+
+//translation
+
+glColor3f (1.0, 0.0, 0.0);
+glBegin(GL_POLYGON);
+glVertex2d(st+tx, st+ty);
+glVertex2d(st+x+tx, st-5+ty);
+glVertex2d(st+x+tx, st+15+ty);
+glVertex2d(st+tx, st+y+ty);
+glEnd();
+
+//scaling
+glColor3f (255.0, 255.0, 51.0);
+glBegin(GL_POLYGON);
+glVertex2d(st*sx, st*sy);
+glVertex2d(st+x*sx, st-5*sy);
+glVertex2d(st+x*sx, st+15*sy);
+glVertex2d(st*sx, st+y*sy);
+glEnd();
+
+
+//x axis
+
+glColor3f (1.0, 0.25, 1.0);
+glBegin(GL_POLYGON);
+glVertex2d(st,-st);
+glVertex2d(st+x,-(st-5));
+glVertex2d(st+x,-(st+15));
+glVertex2d(st,-(st+y));
+glEnd();
+
+//y axis
+glColor3f (1.0, 0.25, 1.0);
+glBegin(GL_POLYGON);
+glVertex2d(-st,st);
+glVertex2d(-(st+x),st-5);
+glVertex2d(-(st+x),st+15);
+glVertex2d(-st,st+y);
+glEnd();
+
+//3rd octal
+glColor3f (1.0, 0.25, 1.0);
+glBegin(GL_POLYGON);
+glVertex2d(-st,-st);
+glVertex2d(-(st+x),-(st-5));
+glVertex2d(-(st+x),-(st+15));
+glVertex2d(-st,-(st+y));
+glEnd();
+
+//shear
+glColor3f (1.0, 0.25, 1.0);
+glBegin(GL_POLYGON);
+glVertex2d(st+sh*st, st);
+glVertex2d(st+x+sh*(st-5), st-5);
+glVertex2d(st+x+sh*(st+15), st+15);
+glVertex2d(st+sh*(st+y), st+y);
+glEnd();
+
+
+glFlush ();
+}
+void init (void)
+{
+/* select clearing (background) color */
+glClearColor (0.0, 0.0, 0.0, 0.0);
+/* initialize viewing values */
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+glOrtho(-100, 100, -100, 100, -100, 100);
+}
+/*
+* Declare initial window size, position, and display mode
+* (single buffer and RGBA). Open window with "hello"
+* in its title bar. Call initialization routines.
+* Register callback function to display graphics.
+* Enter main loop and process events.
+*/
+int main(int argc, char** argv)
+{
+
+    printf("For translation\n");
+    printf("tx=");
+    scanf("%d",&tx);
+    printf("ty=");
+    scanf("%d",&ty);
+
+    printf("For scaling\n");
+    printf("sx=");
+    scanf("%d",&sx);
+    printf("sy=");
+    scanf("%d",&sy);
+
+    printf("For shear\n");
+    printf("sh=");
+    scanf("%d",&sh);
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (500, 500);
+glutInitWindowPosition (100, 100);
+glutCreateWindow ("Masum");
+init ();
+glutDisplayFunc(display);
+glutMainLoop();
+return 0; /* ISO C requires main to return int. */
+}
+

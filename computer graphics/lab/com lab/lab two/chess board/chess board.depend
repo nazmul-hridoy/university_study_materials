@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1496128563 source:c:\users\hridoy\desktop\com lab\lab two\chess board\chess.c
+	<GL/gl.h>
+	<GL/glut.h>
+

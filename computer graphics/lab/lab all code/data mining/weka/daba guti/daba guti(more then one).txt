@@ -1,0 +1,271 @@
+#include<bits/stdc++.h>
+#include<GL/gl.h>
+#include<GL/glut.h>
+using namespace std;
+int x,y;
+void pawn(void)
+{
+    x=5;
+    glBegin(GL_POLYGON);
+    glVertex2d (x+1,7);
+    glVertex2d (x,7);
+    glVertex2d (x,5);
+    glVertex2d (x+10,5);
+    glVertex2d (x+10,7);
+    glVertex2d (x+9,7);
+    glVertex2d (x+9,8);
+    glVertex2d (x+1,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+7,10);
+    glVertex2d (x+5,22);
+    glVertex2d (x+3,10);
+    glVertex2d (x+1,8);
+    glVertex2d (x+9,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (12,18);
+    glVertex2d (12,22);
+    glVertex2d (8,22);
+    glVertex2d (8,18);
+    glEnd();
+}
+
+void rook(void)
+{
+    x=20;
+    glBegin(GL_POLYGON);
+    glVertex2d (x+1,7);
+    glVertex2d (x,7);
+    glVertex2d (x,5);
+    glVertex2d (x+10,5);
+    glVertex2d (x+10,7);
+    glVertex2d (x+9,7);
+    glVertex2d (x+9,8);
+    glVertex2d (x+1,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+7,10);
+    glVertex2d (x+6,22);
+    glVertex2d (x+4,22);
+    glVertex2d (x+3,10);
+    glVertex2d (x+1,8);
+    glVertex2d (x+9,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+9,20);
+    glVertex2d (x+9,22);
+    glVertex2d (x+1,22);
+    glVertex2d (x+1,20);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+9,20);
+    glVertex2d (x+9,23);
+    glVertex2d (x+7,23);
+    glVertex2d (x+7,20);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+6,20);
+    glVertex2d (x+6,23);
+    glVertex2d (x+4,23);
+    glVertex2d (x+4,20);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+3,20);
+    glVertex2d (x+3,23);
+    glVertex2d (x+1,23);
+    glVertex2d (x+1,20);
+    glEnd();
+}
+
+void knight(void)
+{
+    x=35;
+    glBegin(GL_POLYGON);
+    glVertex2d (x+1,7);
+    glVertex2d (x,7);
+    glVertex2d (x,5);
+    glVertex2d (x+10,5);
+    glVertex2d (x+10,7);
+    glVertex2d (x+9,8);
+    glVertex2d (x+1,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+9,8);
+    glVertex2d (x+9,21);
+    glVertex2d (x+3,13);
+    glVertex2d (x+3,10);
+    glVertex2d (x+1,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+9,21);
+    glVertex2d (x+8,23);
+    glVertex2d (x+7,21);
+    glVertex2d (x+4,20);
+    glVertex2d (x+1,18);
+    glVertex2d (x+1,17);
+    glVertex2d (x+3,17);
+    glVertex2d (x+6,16);
+    glEnd();
+}
+
+void bishop(void)
+{
+    x=50;
+    glBegin(GL_POLYGON);
+    glVertex2d (x+1,7);
+    glVertex2d (x,7);
+    glVertex2d (x,5);
+    glVertex2d (x+10,5);
+    glVertex2d (x+10,7);
+    glVertex2d (x+9,7);
+    glVertex2d (x+9,8);
+    glVertex2d (x+1,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+7,10);
+    glVertex2d (x+6,22);
+    glVertex2d (x+4,22);
+    glVertex2d (x+3,10);
+    glVertex2d (x+1,8);
+    glVertex2d (x+9,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+7,20);
+    glVertex2d (x+7,21);
+    glVertex2d (x+5,25);
+    glVertex2d (x+3,21);
+    glVertex2d (x+3,20);
+    glEnd();
+}
+
+void queen(void)
+{
+    x=65;
+    glBegin(GL_POLYGON);
+    glVertex2d (x+1,7);
+    glVertex2d (x,7);
+    glVertex2d (x,5);
+    glVertex2d (x+10,5);
+    glVertex2d (x+10,7);
+    glVertex2d (x+9,7);
+    glVertex2d (x+9,8);
+    glVertex2d (x+1,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+7,10);
+    glVertex2d (x+6,22);
+    glVertex2d (x+4,22);
+    glVertex2d (x+3,10);
+    glVertex2d (x+1,8);
+    glVertex2d (x+9,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+3,23);
+    glVertex2d (x+3,22);
+    glVertex2d (x+7,22);
+    glVertex2d (x+7,23);
+    glVertex2d (x+8,25);
+    glVertex2d (x+6,25);
+    glVertex2d (x+5,28);
+    glVertex2d (x+4,25);
+    glVertex2d (x+2,25);
+    glEnd();
+}
+
+void king(void)
+{
+    x=80;
+    glBegin(GL_POLYGON);
+    glVertex2d (x+1,7);
+    glVertex2d (x,7);
+    glVertex2d (x,5);
+    glVertex2d (x+10,5);
+    glVertex2d (x+10,7);
+    glVertex2d (x+9,7);
+    glVertex2d (x+9,8);
+    glVertex2d (x+1,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+7,10);
+    glVertex2d (x+6,22);
+    glVertex2d (x+4,22);
+    glVertex2d (x+3,10);
+    glVertex2d (x+1,8);
+    glVertex2d (x+9,8);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+3,23);
+    glVertex2d (x+3,22);
+    glVertex2d (x+7,22);
+    glVertex2d (x+7,23);
+    glVertex2d (x+8,25);
+    glVertex2d (x+6,25);
+    glVertex2d (x+5,28);
+    glVertex2d (x+4,25);
+    glVertex2d (x+2,25);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d (x+4,28);
+    glVertex2d (x+3,28);
+    glVertex2d (x+3,27);
+    glVertex2d (x+7,27);
+    glVertex2d (x+7,28);
+    glVertex2d (x+6,28);
+    glVertex2d (x+6,29);
+    glVertex2d (x+4,29);
+    glEnd();
+}
+
+void display(void)
+{
+    glClear (GL_COLOR_BUFFER_BIT);
+    glColor3f (0.0, 0.0, 1.0);
+    pawn();
+    glColor3f (0.0, 1.0, 1.0);
+    rook();
+    glColor3f (1.0, 0.0, 0.0);
+    knight();
+    glColor3f (1.0, 1.0, 0.0);
+    bishop();
+    glColor3f (1.5, 0.0, 1.0);
+    queen();
+    glColor3f (0.0, 1.0, 0.0);
+    king();
+    glFlush ();
+}
+void init(void)
+{
+    glClearColor(0, 0, 0, 0);
+    glMatrixMode(GL_PROJECTION);
+    // for setting the transformation which here is 2D
+    gluOrtho2D(0, 95, 0, 50);
+}
+
+int main(int agrc, char ** argv)
+{
+    glutInit(&agrc, argv);
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    glutInitWindowPosition(100, 100);
+    glutInitWindowSize(1000, 500);
+    glutCreateWindow("Chess Pieces");
+    init();
+    glutDisplayFunc(display);
+    glutMainLoop();
+}

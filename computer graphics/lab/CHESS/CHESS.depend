@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1502916016 source:c:\users\hridoy\desktop\mathatir\chess\main.c
+	<GL/glut.h>
+	<stdio.h>
+	"pieces.h"
+
+1502915862 c:\users\hridoy\desktop\mathatir\chess\pieces.h
+
+1502915876 source:c:\users\hridoy\desktop\mathatir\chess\pieces.c
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	"pieces.h"
+
+1502942566 source:i:\chess\main.c
+	<GL/glut.h>
+	<stdio.h>
+	"pieces.h"
+
+1502915864 i:\chess\pieces.h
+
+1502915878 source:i:\chess\pieces.c
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+	<stdio.h>
+	<stdlib.h>
+	"pieces.h"
+

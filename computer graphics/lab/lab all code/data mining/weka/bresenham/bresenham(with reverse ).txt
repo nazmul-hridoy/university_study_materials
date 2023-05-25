@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <math.h>
+#include <GL/glut.h>
+
+GLint xa, ya, xb, yb;
+
+void lineBres(void)
+{
+    glClear(GL_COLOR_BUFFER_BIT);
+    int x, y, xEnd;
+    int dx=(xa-xb), dy=(ya-yb);
+    int p= 2* dy - dx;
+    int twoDy= 2 * dy, twoDyDx = 2 * (dy - dx);
+
+    if(xa>xb){
+        x = xb;
+        y = yb;
+        xEnd = xa;
+    }
+    else{
+        x = xa;
+        y = ya;
+        xEnd = yb;
+    }
+
+    glBegin(GL_POINTS);
+    glVertex2i(x,y);
+    while (x < xEnd){
+        x++;
+        if(p < 0)
+            p +=twoDy;
+        else{
+            y++;
+            p +=twoDyDx;
+        }
+          glVertex2d (x,y);
+    }
+    glEnd();
+
+  glFlush();
+}
+void Init()
+{
+
+  glClearColor(0.0,0.0,0.0,0);
+
+  glColor3f(139.0,0.0,0.0);
+
+  gluOrtho2D(0 , 640 , 0 , 480);
+}
+int main(int argc, char **argv)
+{
+  printf("Enter two end points of the line to be drawn:\n");
+  //printf("\n************************************");
+  printf("\nEnter Point1( X1 , Y1):\n");
+  scanf("%d%d",&xa,&ya);
+  //printf("\n************************************");
+  printf("\nEnter Point1( X2 , Y2):\n");
+  scanf("%d%d",&xb,&yb);
+
+
+  glutInit(&argc,argv);
+
+  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+
+  glutInitWindowPosition(100,100);
+  glutInitWindowSize(500,500);
+
+  glutCreateWindow("Bres_Line");
+
+  Init();
+
+  glutDisplayFunc(lineBres);
+
+  glutMainLoop();
+  return 0;
+}
+
+

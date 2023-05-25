@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1497603445 source:c:\users\hridoy\desktop\com lab\lab four\lab 4\lab fourr.c
+	<GL/gl.h>
+	<GL/glut.h>
+

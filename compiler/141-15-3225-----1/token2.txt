@@ -1,0 +1,27 @@
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[100];
+    int a,b,c,d,e,f,length;
+    printf("Enter any string\n");
+    gets(str);
+    length=strlen(str);
+    for(a=0;a<length;a++)
+    {
+        if(str[a]==',' || str[a]=='-'|| str[a]=='.' ||str[a]=='%'||str[a]==' ')
+        {
+            printf("\n");
+           while(str[a]==','||str[a]=='-'|| str[a]=='.'||str[a]=='%'||str[a]==' ' )
+            {
+                 a++;
+            }
+    }
+
+        printf("%c",str[a]);
+    }
+
+
+    return 0;
+}

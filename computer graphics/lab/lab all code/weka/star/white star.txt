@@ -1,0 +1,182 @@
+#include <windows.h>
+#include <GL\glut.h>
+
+void myInit (void)
+
+{
+
+     glClearColor(0.0,0.0,0.0,0.0); // sets background color to white
+
+     // sets a point to be 4x4 pixels
+
+     glMatrixMode(GL_PROJECTION);
+
+     glLoadIdentity();
+
+     gluOrtho2D(0.0, 500.0, 0.0, 400.0); // the display area in world coordinates.
+
+}
+
+
+void myDisplay(void)
+
+{
+
+     glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+     glColor3f(1.0f,1.0f,1.0f) ;// sets the drawing background color colour
+
+     glPointSize(4.0);
+
+     glColor3f(0.7f,0.5f,0.2f) ;// setsthe drawing colour
+     glBegin(GL_LINES);
+     //vertical line
+     glVertex2i (30, 160);
+     glVertex2i (370, 160);
+     //horizontal line
+     glVertex2i (200,-10);
+     glVertex2i (200, 330);
+     glEnd();
+
+     //red star..............
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glRectf(100,135,150,185);
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //left triangle
+        glVertex2i (60, 160);
+        glVertex2i (100, 185);
+        glVertex2i (100, 135);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //right triangle
+        glVertex2i (190, 160);
+        glVertex2i (150, 185);
+        glVertex2i (150, 135);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //top triangle
+        glVertex2i (125, 225);
+        glVertex2i (150, 185);
+        glVertex2i (100, 185);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //bottom triangle
+        glVertex2i (125, 95);
+        glVertex2i (100, 135);
+        glVertex2i (150, 135);
+     glEnd();
+
+     //white star..............
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glRectf(250,135,300,185);
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //left triangle
+        glVertex2i (210, 160);
+        glVertex2i (250, 185);
+        glVertex2i (250, 135);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //right triangle
+        glVertex2i (340, 160);
+        glVertex2i (300, 185);
+        glVertex2i (300, 135);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //top triangle
+        glVertex2i (275, 225);
+        glVertex2i (250, 185);
+        glVertex2i (300, 185);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //bottom triangle
+        glVertex2i (275, 95);
+        glVertex2i (250, 135);
+        glVertex2i (300, 135);
+     glEnd();
+
+    //blue star..............
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glRectf(175,210,225,260);
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //left triangle
+        glVertex2i (135, 235);
+        glVertex2i (175, 260);
+        glVertex2i (175, 210);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //right triangle
+        glVertex2i (265, 235);
+        glVertex2i (225, 260);
+        glVertex2i (225, 210);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //top triangle
+        glVertex2i (200, 300);
+        glVertex2i (175, 260);
+        glVertex2i (225, 260);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //bottom triangle
+        glVertex2i (200, 170);
+        glVertex2i (175, 210);
+        glVertex2i (225, 210);
+     glEnd();
+
+    //green star..............
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glRectf(175,60,225,110);
+
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //left triangle
+        glVertex2i (135, 85);
+        glVertex2i (175, 60);
+        glVertex2i (175, 110);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //right triangle
+        glVertex2i (265, 85);
+        glVertex2i (225, 60);
+        glVertex2i (225, 110);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //top triangle
+        glVertex2i (200, 150);
+        glVertex2i (175, 110);
+        glVertex2i (225, 110);
+     glEnd();
+     glColor3f(1.0f,1.0f,1.0f) ;// setsthe drawing colour
+     glBegin(GL_TRIANGLES); //bottom triangle
+        glVertex2i (200, 20);
+        glVertex2i (175, 60);
+        glVertex2i (225, 60);
+     glEnd();
+
+
+
+     glFlush(); // sends all output to display;
+
+}
+int main (int argc, char **argv)
+{
+
+     glutInit (&argc, argv); // to initialize the toolkit;
+
+     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB); // sets the display mode
+
+     glutInitWindowSize (1048, 768); // sets the window size
+
+     glutInitWindowPosition (700, 100); // sets the starting position for the window
+
+     glutCreateWindow ("White STAR!!"); // creates the window and sets the title
+
+     glutDisplayFunc (myDisplay);
+     myInit(); // additional initializations as necessary
+     glutMainLoop(); // go into a loop until event occurs
+     return 0;
+}

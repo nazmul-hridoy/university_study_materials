@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1502558361 source:c:\users\hridoy\desktop\com lab\lab four\new folder\robot\untitled1.c
+	<windows.h>
+	<stdio.h>
+	<GL/glut.h>
+	<stdlib.h>
+
